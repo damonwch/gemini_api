@@ -21,7 +21,10 @@ app.add_middleware(CORSMiddleware,
 
 settings = get_project_settings()
 
-
+@app.get("/gemini/test", tags=["API"], summary="GEMINI")
+def gemini_test(data: dict):
+  return "你好"
+  
 @app.post("/gemini/chat", tags=["API"], summary="GEMINI")
 def gemini_chat(data: dict):
     #print('chat data:',data)
