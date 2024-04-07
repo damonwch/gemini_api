@@ -6,9 +6,9 @@
       "src": "api/main.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "50mb",
-        "memory": 256,
-        "maxMemory": 512,
+        "maxLambdaSize": "100mb",
+        "memory": 512,
+        "maxMemory": 1024,
         "runtime": "python3.10"
       }
     }
