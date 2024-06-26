@@ -19,12 +19,13 @@ def gemini_chat(data: dict):
     prompt = data.get('prompt')
     api_key= data.get('api_key')
     history=data.get('history')
+    model_version=data.get('model_version')
     if history is None:
         history=[]  
     try:
         # genai.configure(api_key=api_key,transport='rest')
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel(model_version)
         chat = model.start_chat(history=history)
         response = chat.send_message(prompt)
         text=response.text
